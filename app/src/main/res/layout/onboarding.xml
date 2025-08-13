@@ -41,6 +41,7 @@
         android:layout_marginTop="48dp"
         android:backgroundTintMode="screen"
         android:text="Get Started"
+        android:backgroundTint="@color/my_button_color"
         android:textColorLink="#F44336"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
