@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    >
 
     <TextView
         android:id="@+id/textView2"
@@ -12,6 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="27dp"
         android:text="EduMate"
+        android:textColor="#F2EDED"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,10 +38,12 @@
         android:id="@+id/button"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginTop="51dp"
+        android:layout_marginTop="48dp"
         android:backgroundTintMode="screen"
         android:text="Get Started"
+        android:textColorLink="#F44336"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
