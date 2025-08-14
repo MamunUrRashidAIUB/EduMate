@@ -87,7 +87,7 @@
             android:layout_height="48dp"
             android:layout_marginBottom="16dp"
             android:background="@android:color/white"
-            android:hint="example@example.com"
+            android:hint="Enter your email or username"
             android:inputType="textEmailAddress"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
