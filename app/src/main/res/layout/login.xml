@@ -148,51 +148,9 @@
         app:layout_constraintTop_toBottomOf="@id/loginFormContainer" />
 
     <!-- Social sign up text -->
-    <TextView
-        android:id="@+id/socialSignUpText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="or sign up with"
-        android:textColor="@android:color/white"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/loginButton" />
 
     <!-- Social login buttons -->
-    <LinearLayout
-        android:id="@+id/socialButtonsContainer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/socialSignUpText">
 
-        <ImageView
-            android:id="@+id/googleButton"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginEnd="16dp"
-            android:background="#FF0000"
-            android:clickable="true"
-            android:focusable="true"
-            android:padding="12dp"
-            android:src="@android:drawable/ic_menu_help" />
-
-        <ImageView
-            android:id="@+id/facebookButton"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:background="#FF0000"
-            android:clickable="true"
-            android:focusable="true"
-            android:padding="12dp"
-            android:src="@android:drawable/ic_menu_help" />
-
-    </LinearLayout>
 
     <!-- Sign up link -->
     <LinearLayout
@@ -206,11 +164,15 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Don't have an account? "
             android:textColor="@android:color/white"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="109dp"
+            tools:layout_editor_absoluteY="590dp"
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/signUpText"
@@ -221,8 +183,12 @@
             android:text="Sign Up"
             android:textColor="#00FF00"
             android:textSize="16sp"
-            android:textStyle="bold" />
-
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="284dp"
+            tools:layout_editor_absoluteY="589dp"
+            tools:ignore="MissingConstraints" />
     </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
