@@ -421,9 +421,7 @@
             android:src="@drawable/outline_add_home_24"
             android:contentDescription="Home"
             android:scaleType="centerInside"
-
             android:background="?attr/selectableItemBackgroundBorderless" />
-
         <ImageView
             android:id="@+id/searchButton"
             android:layout_width="0dp"
@@ -432,9 +430,7 @@
             android:src="@drawable/outline_artist_24"
             android:contentDescription="Search"
             android:scaleType="centerInside"
-
             android:background="?attr/selectableItemBackgroundBorderless" />
-
         <ImageView
             android:id="@+id/notificationsButton"
             android:layout_width="0dp"
@@ -443,9 +439,7 @@
             android:src="@drawable/outline_barcode_scanner_24"
             android:contentDescription="Notifications"
             android:scaleType="centerInside"
-
             android:background="?attr/selectableItemBackgroundBorderless" />
-
         <ImageView
             android:id="@+id/profileButton"
             android:layout_width="0dp"
@@ -455,7 +449,6 @@
             android:contentDescription="Profile"
             android:scaleType="centerInside"
             android:background="?attr/selectableItemBackgroundBorderless" />
-
     </LinearLayout>
 
 
