@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Example: How to use the reusable button in other layouts -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Method 1: Using include (recommended for consistent styling) -->
+    <include
+        layout="@layout/reusable_button"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center" />
+
+    <!-- Method 2: Using the style directly on a Button -->
+    <Button
+        android:id="@+id/login_button"
+        style="@style/EduMateButtonRounded"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center"
+        android:text="Login" />
+
+    <Button
+        android:id="@+id/signup_button"
+        style="@style/EduMateButtonRounded"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center"
+        android:text="Sign Up" />
+
+</LinearLayout>

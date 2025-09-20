@@ -8,32 +8,19 @@
 
     <!-- Header with back button and title -->
 
-    <TextView
-        android:id="@+id/loginTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Log In"
-        android:textColor="#FF0000"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <!-- Welcome text -->
+
     <TextView
         android:id="@+id/welcomeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:text="Welcome"
         android:textColor="@android:color/white"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/loginTitle" />
+        tools:layout_editor_absoluteY="75dp" />
 
     <!-- Logo and brand name -->
     <LinearLayout
@@ -55,6 +42,7 @@
             android:textColor="@android:color/white"
             android:textSize="24sp"
             android:textStyle="bold" />
+
     </LinearLayout>
 
     <!-- Login form container -->
@@ -67,7 +55,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="24dp"
-        android:background="#FF0000"
+        android:background="#B19CD9"
         android:orientation="vertical"
         android:padding="24dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -133,22 +121,6 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/loginButton"
-        android:layout_width="0dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        android:backgroundTint="@color/my_button_color"
-        android:text="Log In"
-        android:textColor="@android:color/white"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/loginFormContainer" />
-
     <!-- Social sign up text -->
 
     <!-- Social login buttons -->
@@ -172,9 +144,9 @@
             android:text="Don't have an account? "
             android:textColor="@android:color/white"
             android:textSize="16sp"
+            tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="109dp"
-            tools:layout_editor_absoluteY="590dp"
-            tools:ignore="MissingConstraints" />
+            tools:layout_editor_absoluteY="590dp" />
 
         <TextView
             android:id="@+id/signUpText"
@@ -186,11 +158,21 @@
             android:textColor="#00FF00"
             android:textSize="16sp"
             android:textStyle="bold"
+            tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="284dp"
-            tools:layout_editor_absoluteY="589dp"
-            tools:ignore="MissingConstraints" />
+            tools:layout_editor_absoluteY="589dp" />
     </LinearLayout>
 
+    <Button
+        android:id="@+id/loginButton"
+        style="@style/EduMateButtonRounded"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:text="Login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loginFormContainer" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
