@@ -6,6 +6,37 @@
     </style>
 
     <style name="Theme.EduMate" parent="Base.Theme.EduMate" />
+    
+    <!-- Custom Button Styles -->
+    <style name="EduMateButtonPrimary" parent="Widget.Material3.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:backgroundTint">@color/my_button_color</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:elevation">4dp</item>
+        <item name="android:layout_marginStart">24dp</item>
+        <item name="android:layout_marginEnd">24dp</item>
+    </style>
+    
+    <style name="EduMateButtonSecondary" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:textColor">@color/my_button_color</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="strokeColor">@color/my_button_color</item>
+        <item name="strokeWidth">2dp</item>
+        <item name="android:layout_marginStart">24dp</item>
+        <item name="android:layout_marginEnd">24dp</item>
+    </style>
+    
+    <style name="EduMateButtonRounded" parent="EduMateButtonPrimary">
+        <item name="cornerRadius">25dp</item>
+        <item name="android:background">@drawable/rounded_button</item>
+    </style>
+    
     <style name="Theme.App.Starting" parent="Theme.SplashScreen">
         <!-- Set the splash screen background. -->
         <item name="windowSplashScreenBackground">@color/black</item>

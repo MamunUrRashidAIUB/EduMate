@@ -5,8 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/black"
-    >
+    android:background="@drawable/studentboarding" >
 
     <TextView
         android:id="@+id/textView2"
@@ -27,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="258dp"
         android:text="Welcome to"
-        android:textColor="#E70B0B"
+        android:textColor="#FFFFFF"
         android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,13 +37,16 @@
         android:id="@+id/button"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginTop="48dp"
-        android:backgroundTintMode="screen"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/rounded_button"
+        android:elevation="4dp"
         android:text="Get Started"
-        android:backgroundTint="@color/my_button_color"
-        android:textColorLink="#F44336"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
