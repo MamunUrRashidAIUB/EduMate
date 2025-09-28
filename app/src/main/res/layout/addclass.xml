@@ -1,6 +1,210 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:padding="16dp">
+
+    <!-- Header Section -->
+    <TextView
+        android:id="@+id/greetingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Hi, Anna"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Notification and Profile Icons -->
+    <ImageView
+        android:id="@+id/notificationIcon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_notifications"
+        app:layout_constraintEnd_toStartOf="@id/profileIcon"
+        app:layout_constraintTop_toTopOf="@id/greetingText"
+        app:layout_constraintBottom_toBottomOf="@id/greetingText"
+        app:tint="@color/white" />
+
+    <ImageView
+        android:id="@+id/profileIcon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/greetingText"
+        app:layout_constraintBottom_toBottomOf="@id/greetingText"
+        app:tint="@color/white" />
+
+    <!-- Back Button -->
+    <LinearLayout
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/greetingText">
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/baseline_arrow_back_24"
+            app:tint="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Your Classes"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <!-- Add Picture Section -->
+    <LinearLayout
+        android:id="@+id/addPictureContainer"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/add_dotted_border"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/backButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/addIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/circle_yellow_background"
+            android:padding="12dp"
+            android:src="@drawable/baseline_add_24"
+            app:tint="@color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Add a Picture"
+            android:textColor="#E2F163"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <!-- Class Name Input -->
+    <TextView
+        android:id="@+id/classNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Class name :"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addPictureContainer" />
+
+    <EditText
+        android:id="@+id/classNameInput"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_input_background"
+        android:hint="Enter class name"
+        android:textColorHint="#666666"
+        android:textColor="@color/white"
+        android:padding="12dp"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/classNameLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Choose Date Label -->
+    <TextView
+        android:id="@+id/chooseDateLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Choose date :"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/classNameInput" />
+
+    <!-- Day Selection Buttons -->
+    <LinearLayout
+        android:id="@+id/dayButtonsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:weightSum="6"
+        app:layout_constraintTop_toBottomOf="@id/chooseDateLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/btnMon"
+            style="@style/DayButtonStyle"
+            android:layout_weight="1"
+            android:text="MON"
+            android:background="@drawable/day_button_selector" />
+
+        <Button
+            android:id="@+id/btnTue"
+            style="@style/DayButtonStyle"
+            android:layout_weight="1"
+            android:text="TUE"
+            android:background="@drawable/day_button_selector" />
+
+        <Button
+            android:id="@+id/btnWed"
+            style="@style/DayButtonStyle"
+            android:layout_weight="1"
+            android:text="WED"
+            android:background="@drawable/day_button_selector" />
+
+        <Button
+            android:id="@+id/btnThu"
+            style="@style/DayButtonStyle"
+            android:layout_weight="1"
+            android:text="THU"
+            android:background="@drawable/day_button_selector" />
+
+        <Button
+            android:id="@+id/btnFri"
+            style="@style/DayButtonStyle"
+            android:layout_weight="1"
+            android:text="FRI"
+            android:background="@drawable/day_button_selector" />
+
+        <Button
+            android:id="@+id/btnSat"
+            style="@style/DayButtonStyle"
+            android:layout_weight="1"
+            android:text="SAT"
+            android:background="@drawable/day_button_selector" />
+
+    </LinearLayout>
+
+    <!-- Calendar View -->
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:theme="@style/CalendarViewStyle"
+        app:layout_constraintTop_toBottomOf="@id/dayButtonsContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
