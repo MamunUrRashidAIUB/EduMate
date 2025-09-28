@@ -4,5 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="my_button_color">#F61B2B</color>
     <color name="yellow">#FFFF00</color>
-    <color name="green">#00FF00</color>"
+    <color name="green">#00FF00</color>
+    <color name="red">#FF0000</color>
+    <color name="dark_card">#333333</color>
 </resources>
