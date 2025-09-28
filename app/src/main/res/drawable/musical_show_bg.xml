@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="300dp"
+    android:height="200dp"
+    android:viewportWidth="300"
+    android:viewportHeight="200">
+    
+    <!-- Stage Background -->
+    <rect android:width="300" android:height="200" android:fillColor="#1a1a2e"/>
+    
+    <!-- Stage Platform -->
+    <rect android:width="280" android:height="60" android:fillColor="#16213e" 
+          android:layout_marginStart="10dp" android:layout_marginTop="140dp"/>
+    
+    <!-- Lights -->
+    <circle android:cx="50" android:cy="40" android:r="8" android:fillColor="#FFD700"/>
+    <circle android:cx="100" android:cy="40" android:r="8" android:fillColor="#FFD700"/>
+    <circle android:cx="150" android:cy="40" android:r="8" android:fillColor="#FFD700"/>
+    <circle android:cx="200" android:cy="40" android:r="8" android:fillColor="#FFD700"/>
+    <circle android:cx="250" android:cy="40" android:r="8" android:fillColor="#FFD700"/>
+    
+    <!-- Musical Notes -->
+    <path android:fillColor="#E2F163" 
+          android:pathData="M120,100 C125,95 130,100 125,105 C120,110 115,105 120,100 Z"/>
+    <path android:fillColor="#E2F163"
+          android:pathData="M140,110 C145,105 150,110 145,115 C140,120 135,115 140,110 Z"/>
+    <path android:fillColor="#E2F163"
+          android:pathData="M160,95 C165,90 170,95 165,100 C160,105 155,100 160,95 Z"/>
+</vector>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="300dp"
+    android:height="200dp"
+    android:viewportWidth="300"
+    android:viewportHeight="200">
+    
+    <!-- Concert Background -->
+    <rect android:width="300" android:height="200" android:fillColor="#2c1810"/>
+    
+    <!-- Stage -->
+    <rect android:width="280" android:height="50" android:fillColor="#3d2817" 
+          android:layout_marginStart="10dp" android:layout_marginTop="150dp"/>
+    
+    <!-- Spotlights -->
+    <circle android:cx="75" android:cy="30" android:r="12" android:fillColor="#FFFFFF" android:alpha="0.8"/>
+    <circle android:cx="150" android:cy="25" android:r="15" android:fillColor="#FFFFFF" android:alpha="0.9"/>
+    <circle android:cx="225" android:cy="30" android:r="12" android:fillColor="#FFFFFF" android:alpha="0.8"/>
+    
+    <!-- Decorative Elements -->
+    <rect android:width="20" android:height="80" android:fillColor="#8B4513" 
+          android:layout_marginStart="50dp" android:layout_marginTop="120dp"/>
+    <rect android:width="20" android:height="80" android:fillColor="#8B4513" 
+          android:layout_marginStart="230dp" android:layout_marginTop="120dp"/>
+          
+    <!-- Stars -->
+    <path android:fillColor="#FFD700" 
+          android:pathData="M180,80 L185,90 L195,90 L187,97 L190,107 L180,100 L170,107 L173,97 L165,90 L175,90 Z"/>
+    <path android:fillColor="#FFD700"
+          android:pathData="M100,70 L103,77 L110,77 L105,81 L107,88 L100,84 L93,88 L95,81 L90,77 L97,77 Z"/>
+</vector>
