@@ -29,6 +29,16 @@
             android:exported="false"/>
         <activity android:name=".home"
             android:exported="false"/>
+        <activity android:name=".HomeClassActivity"
+            android:exported="false"/>
+        <activity android:name=".HomeEventActivity"
+            android:exported="false"/>
+        <activity android:name=".HomeAssignmentActivity"
+            android:exported="false"/>
+        <activity android:name=".AddClassActivity"
+            android:exported="false"/>
+        <activity android:name=".AddAssignmentActivity"
+            android:exported="false"/>
 
     </application>
 

@@ -88,11 +88,14 @@
 
         <!-- Add New Card -->
         <FrameLayout
+            android:id="@+id/btnAddClass"
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:layout_marginTop="16dp"
             android:layout_gravity="center_horizontal"
-            android:background="@drawable/add_dotted_border">
+            android:background="@drawable/add_dotted_border"
+            android:clickable="true"
+            android:focusable="true">
 
             <ImageView
                 android:layout_width="40dp"

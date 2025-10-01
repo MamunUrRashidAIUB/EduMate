@@ -6,18 +6,18 @@
     android:viewportHeight="200">
     
     <!-- Stage Background -->
-    <rect android:width="300" android:height="200" android:fillColor="#1a1a2e"/>
+    <rect android:width="300dp" android:height="200dp" android:fillColor="#1a1a2e"/>
     
     <!-- Stage Platform -->
-    <rect android:width="280" android:height="60" android:fillColor="#16213e" 
+    <rect android:width="280dp" android:height="60dp" android:fillColor="#16213e" 
           android:layout_marginStart="10dp" android:layout_marginTop="140dp"/>
     
     <!-- Lights -->
-    <circle android:cx="50" android:cy="40" android:r="8" android:fillColor="#FFD700"/>
-    <circle android:cx="100" android:cy="40" android:r="8" android:fillColor="#FFD700"/>
-    <circle android:cx="150" android:cy="40" android:r="8" android:fillColor="#FFD700"/>
-    <circle android:cx="200" android:cy="40" android:r="8" android:fillColor="#FFD700"/>
-    <circle android:cx="250" android:cy="40" android:r="8" android:fillColor="#FFD700"/>
+    <path android:fillColor="#FFD700" android:pathData="M50,32 A8,8 0 1,1 50,48 A8,8 0 1,1 50,32 Z"/>
+    <path android:fillColor="#FFD700" android:pathData="M100,32 A8,8 0 1,1 100,48 A8,8 0 1,1 100,32 Z"/>
+    <path android:fillColor="#FFD700" android:pathData="M150,32 A8,8 0 1,1 150,48 A8,8 0 1,1 150,32 Z"/>
+    <path android:fillColor="#FFD700" android:pathData="M200,32 A8,8 0 1,1 200,48 A8,8 0 1,1 200,32 Z"/>
+    <path android:fillColor="#FFD700" android:pathData="M250,32 A8,8 0 1,1 250,48 A8,8 0 1,1 250,32 Z"/>
     
     <!-- Musical Notes -->
     <path android:fillColor="#E2F163" 

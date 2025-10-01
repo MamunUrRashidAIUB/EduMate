@@ -6,21 +6,21 @@
     android:viewportHeight="200">
     
     <!-- Concert Background -->
-    <rect android:width="300" android:height="200" android:fillColor="#2c1810"/>
+    <rect android:width="300dp" android:height="200dp" android:fillColor="#2c1810"/>
     
     <!-- Stage -->
-    <rect android:width="280" android:height="50" android:fillColor="#3d2817" 
+    <rect android:width="280dp" android:height="50dp" android:fillColor="#3d2817" 
           android:layout_marginStart="10dp" android:layout_marginTop="150dp"/>
     
     <!-- Spotlights -->
-    <circle android:cx="75" android:cy="30" android:r="12" android:fillColor="#FFFFFF" android:alpha="0.8"/>
-    <circle android:cx="150" android:cy="25" android:r="15" android:fillColor="#FFFFFF" android:alpha="0.9"/>
-    <circle android:cx="225" android:cy="30" android:r="12" android:fillColor="#FFFFFF" android:alpha="0.8"/>
+    <path android:fillColor="#FFFFFF" android:alpha="0.8" android:pathData="M75,18 A12,12 0 1,1 75,42 A12,12 0 1,1 75,18 Z"/>
+    <path android:fillColor="#FFFFFF" android:alpha="0.9" android:pathData="M150,10 A15,15 0 1,1 150,40 A15,15 0 1,1 150,10 Z"/>
+    <path android:fillColor="#FFFFFF" android:alpha="0.8" android:pathData="M225,18 A12,12 0 1,1 225,42 A12,12 0 1,1 225,18 Z"/>
     
     <!-- Decorative Elements -->
-    <rect android:width="20" android:height="80" android:fillColor="#8B4513" 
+    <rect android:width="20dp" android:height="80dp" android:fillColor="#8B4513" 
           android:layout_marginStart="50dp" android:layout_marginTop="120dp"/>
-    <rect android:width="20" android:height="80" android:fillColor="#8B4513" 
+    <rect android:width="20dp" android:height="80dp" android:fillColor="#8B4513" 
           android:layout_marginStart="230dp" android:layout_marginTop="120dp"/>
           
     <!-- Stars -->
