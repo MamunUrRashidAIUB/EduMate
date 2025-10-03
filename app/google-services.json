@@ -1,26 +1,29 @@
 {
-  "_comment": "This is a placeholder for your Firebase configuration file.",
-  "_instructions": [
-    "1. Go to https://console.firebase.google.com/",
-    "2. Create a new project or select an existing one",
-    "3. Add an Android app to your Firebase project",
-    "4. Register your app with package name: com.example.edumate",
-    "5. Download the google-services.json file",
-    "6. Replace this placeholder file with the downloaded google-services.json",
-    "7. Make sure the file is placed in app/ directory (not app/src/)"
-  ],
   "project_info": {
-    "project_number": "YOUR_PROJECT_NUMBER",
-    "project_id": "YOUR_PROJECT_ID"
+    "project_number": "852425578435",
+    "project_id": "edumate-82e7b",
+    "storage_bucket": "edumate-82e7b.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "YOUR_APP_ID",
+        "mobilesdk_app_id": "1:852425578435:android:4ecdbb5936f30652dc0f76",
         "android_client_info": {
-          "package_name": "com.example.edumate"
+          "package_name": "com.rashid.edumate"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7GLo-TRdEe27yhuZ0CNVoInP4miWMYvg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
         }
       }
     }
-  ]
+  ],
+  "configuration_version": "1"
 }
