@@ -1,11 +1,11 @@
-package com.example.edumate
+package com.rashid.edumate
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 
-class AddAssignmentActivity : AppCompatActivity() {
+class AddClassActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.addassignment)
+        setContentView(R.layout.addclass)
     }
 }

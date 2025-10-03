@@ -1,4 +1,4 @@
-package com.example.edumate
+package com.rashid.edumate
 
 import android.content.Intent
 import android.os.Bundle

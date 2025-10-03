@@ -1,11 +1,11 @@
-package com.example.edumate
+package com.rashid.edumate
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 
-class AddClassActivity : AppCompatActivity() {
+class HomeEventActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.addclass)
+        setContentView(R.layout.homeevent)
     }
 }

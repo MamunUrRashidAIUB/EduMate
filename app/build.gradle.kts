@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.edumate"
+    namespace = "com.rashid.edumate"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.edumate"
+        applicationId = "com.rashid.edumate"
         minSdk = 24
         targetSdk = 36
         versionCode = 1

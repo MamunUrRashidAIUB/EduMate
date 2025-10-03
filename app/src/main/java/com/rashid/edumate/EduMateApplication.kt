@@ -1,4 +1,4 @@
-package com.example.edumate
+package com.rashid.edumate
 
 import android.app.Application
 import com.google.firebase.FirebaseApp
