@@ -11,22 +11,30 @@ import androidx.core.view.WindowInsetsCompat
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import androidx.lifecycle.lifecycleScope
+import com.rashid.edumate.utils.AuthManager
 
 class MainActivity : AppCompatActivity() {
     // A flag to simulate data loading or some initial setup
     private var isLoading = true
+    private lateinit var authManager: AuthManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        // 2. Install the splash screen. MUST be called before super.onCreate()
+        // Install the splash screen. MUST be called before super.onCreate()
         val splashScreen = installSplashScreen()
         super.onCreate(savedInstanceState)
+        
+        // Initialize AuthManager
+        authManager = AuthManager(this)
+        
         splashScreen.setKeepOnScreenCondition {
             isLoading
         }
+        
         lifecycleScope.launch {
-            delay(2000) // Simulate a 2-second loading delay
-            isLoading = false // Update the condition to dismiss the splash screen
+            // Check authentication state during splash screen
+            checkAuthenticationAndNavigate()
         }
+        
         enableEdgeToEdge()
         setContentView(R.layout.onboarding)
 
@@ -42,7 +50,27 @@ class MainActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
-
+        }
+    }
+    
+    private suspend fun checkAuthenticationAndNavigate() {
+        // Simulate loading delay
+        delay(2000)
+        
+        // Check if user is already logged in
+        authManager.checkAuthState { isLoggedIn ->
+            runOnUiThread {
+                isLoading = false
+                
+                if (isLoggedIn) {
+                    // User is already logged in, navigate to home
+                    val intent = Intent(this, home::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    startActivity(intent)
+                    finish()
+                }
+                // If not logged in, stay on onboarding screen
+            }
         }
     }
 }
