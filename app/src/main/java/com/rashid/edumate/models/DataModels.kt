@@ -18,6 +18,11 @@ data class ClassModel(
     val teacherName: String = "",
     val students: Map<String, Boolean> = mapOf(),
     val description: String = "",
+    val schedule: String = "", // Days of week (e.g., "Mon,Wed,Fri")
+    val time: String = "", // Class time (e.g., "10:00 AM - 11:30 AM")
+    val room: String = "", // Classroom or location
+    val color: String = "#B19CD9", // Color for UI display
+    val isActive: Boolean = true,
     val createdAt: Long = System.currentTimeMillis()
 )
 
