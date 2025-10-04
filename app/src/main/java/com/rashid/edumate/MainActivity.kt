@@ -57,19 +57,32 @@ class MainActivity : AppCompatActivity() {
         // Simulate loading delay
         delay(2000)
         
+        var authCheckCompleted = false
+        
         // Check if user is already logged in
         authManager.checkAuthState { isLoggedIn ->
             runOnUiThread {
-                isLoading = false
-                
-                if (isLoggedIn) {
-                    // User is already logged in, navigate to home
-                    val intent = Intent(this, home::class.java)
-                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                    startActivity(intent)
-                    finish()
+                if (!authCheckCompleted) {
+                    authCheckCompleted = true
+                    isLoading = false
+                    
+                    if (isLoggedIn) {
+                        // User is already logged in, navigate to home
+                        val intent = Intent(this@MainActivity, home::class.java)
+                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        startActivity(intent)
+                        finish()
+                    }
+                    // If not logged in, stay on onboarding screen
                 }
-                // If not logged in, stay on onboarding screen
+            }
+        }
+        
+        // Fallback timeout to prevent getting stuck
+        delay(5000)
+        if (!authCheckCompleted) {
+            runOnUiThread {
+                isLoading = false
             }
         }
     }

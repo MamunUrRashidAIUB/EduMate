@@ -19,6 +19,24 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    
+    <!-- Profile Icon in Header -->
+    <ImageView
+        android:id="@+id/profileIcon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="49dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/ic_profile_circle_background"
+        android:src="@android:drawable/ic_menu_myplaces"
+        android:scaleType="centerInside"
+        android:padding="8dp"
+        android:contentDescription="Profile"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white" />
 
     <LinearLayout
         android:id="@+id/circularIconsContainer"
@@ -315,15 +333,6 @@
             android:layout_weight="1"
             android:src="@drawable/outline_artist_24"
             android:contentDescription="Search"
-            android:scaleType="centerInside"
-            android:background="?attr/selectableItemBackgroundBorderless" />
-        <ImageView
-            android:id="@+id/notificationsButton"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@drawable/outline_barcode_scanner_24"
-            android:contentDescription="Notifications"
             android:scaleType="centerInside"
             android:background="?attr/selectableItemBackgroundBorderless" />
         <ImageView

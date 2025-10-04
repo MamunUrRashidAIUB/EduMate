@@ -25,9 +25,12 @@ class LoginActivity : AppCompatActivity() {
         authManager = AuthManager(this)
         
         // Check if user is already logged in
-        if (authManager.isUserLoggedIn()) {
-            navigateToHome()
-            return
+        authManager.checkAuthState { isLoggedIn ->
+            if (isLoggedIn) {
+                runOnUiThread {
+                    navigateToHome()
+                }
+            }
         }
         
         // Initialize UI components
@@ -80,17 +83,35 @@ class LoginActivity : AppCompatActivity() {
         loginButton.isEnabled = false
         loginButton.text = "Signing In..."
         
-        // Perform Firebase login
-        authManager.signIn(email, password) { success, error ->
-            runOnUiThread {
-                loginButton.isEnabled = true
-                loginButton.text = "Login"
-                
-                if (success) {
-                    Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show()
-                    navigateToHome()
-                } else {
-                    Toast.makeText(this, "Login failed: ${error ?: "Unknown error"}", Toast.LENGTH_LONG).show()
+        // Add timeout protection
+        var loginCompleted = false
+        
+        // Timeout handler (15 seconds)
+        android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
+            if (!loginCompleted) {
+                loginCompleted = true
+                runOnUiThread {
+                    loginButton.isEnabled = true
+                    loginButton.text = "Login"
+                    Toast.makeText(this@LoginActivity, "Login timeout. Please check your internet connection and try again.", Toast.LENGTH_LONG).show()
+                }
+            }
+        }, 15000)
+        
+        // Perform Firebase login (using simple method first)
+        authManager.signInSimple(email, password) { success, error ->
+            if (!loginCompleted) {
+                loginCompleted = true
+                runOnUiThread {
+                    loginButton.isEnabled = true
+                    loginButton.text = "Login"
+                    
+                    if (success) {
+                        Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show()
+                        navigateToHome()
+                    } else {
+                        Toast.makeText(this, "Login failed: ${error ?: "Unknown error"}", Toast.LENGTH_LONG).show()
+                    }
                 }
             }
         }

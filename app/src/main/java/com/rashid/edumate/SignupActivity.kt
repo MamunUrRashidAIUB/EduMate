@@ -89,6 +89,12 @@ class SignupActivity : AppCompatActivity() {
             return
         }
         
+        if (confirmPassword.isEmpty()) {
+            confirmPasswordEditText.error = "Please confirm your password"
+            confirmPasswordEditText.requestFocus()
+            return
+        }
+        
         if (password != confirmPassword) {
             confirmPasswordEditText.error = "Passwords do not match"
             confirmPasswordEditText.requestFocus()
@@ -99,21 +105,39 @@ class SignupActivity : AppCompatActivity() {
         signupButton.isEnabled = false
         signupButton.text = "Creating Account..."
         
-        // Perform Firebase signup
-        authManager.signUp(name, email, password) { success, error ->
-            runOnUiThread {
-                signupButton.isEnabled = true
-                signupButton.text = "Sign Up"
-                
-                if (success) {
-                    Toast.makeText(this, "Account created successfully!", Toast.LENGTH_SHORT).show()
-                    // Navigate to home screen
-                    val intent = Intent(this, home::class.java)
-                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                    startActivity(intent)
-                    finish()
-                } else {
-                    Toast.makeText(this, "Sign up failed: ${error ?: "Unknown error"}", Toast.LENGTH_LONG).show()
+        // Add timeout protection
+        var signupCompleted = false
+        
+        // Timeout handler (15 seconds)
+        android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
+            if (!signupCompleted) {
+                signupCompleted = true
+                runOnUiThread {
+                    signupButton.isEnabled = true
+                    signupButton.text = "Sign Up"
+                    Toast.makeText(this@SignupActivity, "Signup timeout. Please check your internet connection and try again.", Toast.LENGTH_LONG).show()
+                }
+            }
+        }, 15000)
+        
+        // Perform Firebase signup (using simple method)
+        authManager.signUpSimple(name, email, password) { success, error ->
+            if (!signupCompleted) {
+                signupCompleted = true
+                runOnUiThread {
+                    signupButton.isEnabled = true
+                    signupButton.text = "Sign Up"
+                    
+                    if (success) {
+                        Toast.makeText(this, "Account created successfully!", Toast.LENGTH_SHORT).show()
+                        // Navigate to home screen
+                        val intent = Intent(this, home::class.java)
+                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        startActivity(intent)
+                        finish()
+                    } else {
+                        Toast.makeText(this, "Sign up failed: ${error ?: "Unknown error"}", Toast.LENGTH_LONG).show()
+                    }
                 }
             }
         }
